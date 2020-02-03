@@ -1,4 +1,4 @@
-package demo;
+package demo.ipt;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,13 +11,13 @@ import config.TaskConfig;
 
 /**
  * @author xiaxingzzz
- * 验证什么情况下config不能使用构造方法 TODO
+ * 验证什么可以加载扫描路径以外的config
  *
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Import({ ProcessConfig.class, TaskConfig.class })
-public class SpringbootAnnotationLearningApplicationTests {
+public class ImportConfigTests {
 
 	@Test
 	public void contextLoads() {
