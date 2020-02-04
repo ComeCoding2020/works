@@ -216,9 +216,9 @@ tags:
 
 # JPA 注解
 
- ### @Entity：@Table(name="")
-
-  - 表明这是一个实体类。一般用于 jpa 这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table 可以省略
+ ### @Entity
+ 
+ - @Table(name="") 表明这是一个实体类。一般用于 jpa 这两个注解一般一块使用，但是如果表名和实体类名相同的话，@Table 可以省略
 
  ### @MappedSuperClass
  
@@ -232,7 +232,9 @@ tags:
  
   - 如果字段名与列名相同，则可以省略。
 
- ### @Id：表示该属性为主键。
+ ### @Id 
+ 
+  - 表示该属性为主键。
 
  ### @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "repairseq")
 
