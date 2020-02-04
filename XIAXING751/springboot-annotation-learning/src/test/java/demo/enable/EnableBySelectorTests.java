@@ -1,4 +1,4 @@
-package demo;
+package demo.enable;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,7 +17,7 @@ import config.TaskConfig;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @Import({ ProcessConfig.class, TaskConfig.class })
-public class SpringbootAnnotationLearningApplicationTests {
+public class EnableBySelectorTests {
 
 	@Test
 	public void contextLoads() {
