@@ -135,7 +135,7 @@ public class SM4Utils {
 
     public static void main(String[] args) throws IOException
     {
-        String plainText ="ssda撒打飞机了ii&$$^##)*&6223';.,[]";
+        String plainText ="ssdA撒打飞机了ii&$$^##)*&6223';.,[]";
         SM4Utils sm4 = new SM4Utils();
         sm4.secretKey = "11HDESaAhiHHugDz";
         plainText.getBytes("UTF-8");
