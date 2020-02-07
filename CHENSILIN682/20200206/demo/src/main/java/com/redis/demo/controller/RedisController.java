@@ -1,8 +1,12 @@
 package com.redis.demo.controller;
 
+import com.redis.demo.pojo.User;
+import com.redis.demo.repository.UserRepository;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Collections;
 import java.util.Map;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -21,6 +26,12 @@ public class RedisController {
 
     @Autowired
     private RedissonClient redisson;
+
+    @Autowired
+    private CacheManager cacheManager;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @RequestMapping(value = "/setValue", method = RequestMethod.POST)
     @ResponseBody
@@ -56,5 +67,12 @@ public class RedisController {
             System.out.println("lock is owned by another thread");
         }
     }
+
+    @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+    @ResponseBody
+    public User getUser(@RequestParam String id) {
+        return userRepository.getUserById(id);
+    }
+
 
 }
